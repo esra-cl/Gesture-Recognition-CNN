@@ -91,7 +91,7 @@ class worker_Thread(QThread):
         return 
     def make_prediction(self):
 
-        model = load_model('C:/Users/HP/Downloads/realtime_eddition/the_best_model.h5')
+        model = load_model(fr'C:\Users\HP\Downloads\feature_extractor\Gesture-Recognition-CNN\the_best_model.h5')
         label_encoder = LabelEncoder()
         label_encoder.fit(['A' ,'B' ,'C', 'D' ,'E' ,'F' ,'G', 'H' ,'I', 'J' ,'K' ,'L', 'M' ,'N' ,'O', 'P', 'R', 'S', 'T', 'U', 'V', 'Y', 'Z'])
         self.to_be_predicted = self.main_window.frame_toBe_tested
@@ -107,6 +107,8 @@ class worker_Thread(QThread):
             #print(class_labels)
             predicted_label = class_labels[predicted_class[0]]
             self.main_window.prediction_result.setText(f"the character is :{predicted_label}")
+            self.main_window.prediction_result.setText("the character is unknown")
+
         else:
             self.main_window.prediction_result.setText("the character is unknown")
 
