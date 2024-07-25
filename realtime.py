@@ -107,7 +107,6 @@ class worker_Thread(QThread):
             #print(class_labels)
             predicted_label = class_labels[predicted_class[0]]
             self.main_window.prediction_result.setText(f"the character is :{predicted_label}")
-            self.main_window.prediction_result.setText("the character is unknown")
 
         else:
             self.main_window.prediction_result.setText("the character is unknown")
